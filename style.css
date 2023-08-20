@@ -1,0 +1,69 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.primary-black{
+    color: #111;
+}
+
+.secondary-purple{
+    color: #E527B2;
+}
+
+/* default css end  */
+
+/* banner css start  */
+
+section.banner-section {
+    background: #f9f6e2;
+}
+
+.banner-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-left {
+    text-align: center;
+    width: 50%;
+}
+
+.banner-image{
+    width: 45%;
+}
+
+.banner-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.banner-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: normal;
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+
+button.promo-code {
+    background: #E527B2;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 5px;
+}
+
+/* banner css end  */
