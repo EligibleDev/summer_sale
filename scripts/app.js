@@ -1,4 +1,6 @@
 let totalPrice = 0;
+const couponInput = document.getElementById('coupon-input');
+const couponApply = document.getElementById('coupon-apply');
 
 function setProductTitleInTheCart(target) {
     const selectedProductList = document.getElementById('selected-product-list');
@@ -18,16 +20,14 @@ function setProductTitleInTheCart(target) {
     if (oldTotal.innerText > 0) {
         document.getElementById('make-purchase').removeAttribute('disabled');
     }
+
 }
 
 
-const couponInput = document.getElementById('coupon-input');
-const couponApply = document.getElementById('coupon-apply');
-
 couponInput.addEventListener('keyup', function () {
-    if (couponInput.value === 'SELL200') {
+    if (couponInput.value === 'SELL200' && totalPrice > 200) {
         couponApply.removeAttribute('disabled')
-    } else {
+    }else{
         couponApply.setAttribute('disabled', true)
     }
 })
@@ -36,14 +36,16 @@ couponApply.addEventListener('click', function () {
     if (totalPrice < 200) {
         alert('You have to shop at least 200 TK');
         return;
+    } else {
+        couponApply.removeAttribute('disabled')
     }
 
     const discount = document.getElementById('discount')
     const discountedTotal = document.getElementById('discounted-total')
 
     const finalDiscount = (20 / 100) * totalPrice;
-    discount.innerText = finalDiscount;
+    discount.innerText = finalDiscount.toFixed(2);
 
     const finalDiscountedTotal = totalPrice - finalDiscount;
-    discountedTotal.innerText = finalDiscountedTotal;
+    discountedTotal.innerText = finalDiscountedTotal.toFixed(2);
 })
