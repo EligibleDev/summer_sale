@@ -33,12 +33,12 @@ couponInput.addEventListener('keyup', function () {
 })
 
 couponApply.addEventListener('click', function () {
-    if (totalPrice < 200) {
-        alert('You have to shop at least 200 TK');
-        return;
-    } else {
-        couponApply.removeAttribute('disabled')
-    }
+    // if (totalPrice < 200) {
+    //     alert('You have to shop at least 200 TK');
+    //     return;
+    // } else {
+    //     couponApply.removeAttribute('disabled')
+    // }
 
     const discount = document.getElementById('discount')
     const discountedTotal = document.getElementById('discounted-total')
