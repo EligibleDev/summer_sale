@@ -16,6 +16,11 @@
     }
 
     /* banner responsive end */
+
+    .product-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 }
 
 @media screen and (max-width:577px) {
@@ -24,4 +29,22 @@
     }
 
     /* banner responsive end */
+
+    .sidebar{
+        width: 100%;
+        position: static !important;
+    }
+
+    .products-section-container{
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .products-grid-container{
+        width: 100%;
+    }
+
+    .product-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

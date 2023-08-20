@@ -114,7 +114,8 @@ section.banner-section {
 
 .product-grid {
     justify-content: space-between;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     flex: 1;
 }
@@ -134,6 +135,7 @@ section.banner-section {
     flex-direction: column;
     gap: 0.5rem;
     flex: 1;
+    cursor: pointer;
 }
 
 .product-box>div {
@@ -193,6 +195,7 @@ aside.sidebar {
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     padding: 0.5rem;
     height: 3rem;
+    width: 100%;
 }
 
 .coupon-button {
@@ -201,6 +204,11 @@ aside.sidebar {
     background: #E527B2 !important;
     color: #ffffff !important;
     padding: 0.55rem 1.25rem !important;
+}
+
+button:disabled{
+    color: rgba(255, 255, 255, 0.621) !important;
+    background-color: #f780d5 !important;
 }
 
 .cart {
@@ -214,7 +222,8 @@ aside.sidebar {
     padding: 1.5rem;
 }
 
-.cart-products ul {
+
+#selected-product-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;

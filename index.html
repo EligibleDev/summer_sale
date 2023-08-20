@@ -18,8 +18,8 @@
         rel="stylesheet">
 
     <!-- css file link -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 
 <body>
@@ -45,32 +45,33 @@
 
     <!-- banner section end -->
 
-    <section class="products-section">
-        <div class="products-container max-w-screen-xl px-10 xl:px-0 py-20">
-            <h3 class="category-title">Kitchenware</h3>
+    <!-- products section start -->
 
+    <section class="products-section">
+        <div class="products-container max-w-screen-xl px-5 sm:px-10 xl:px-0 py-20">
+            <h3 class="category-title">Kitchenware</h3>
             <div class="products-section-container">
                 <div class="products-grid-container">
                     <div class="product-grid">
-                        <div class="product-box">
+                        <div onclick="setProductTitleInTheCart(this)" class="product-box">
                             <div><img src="./images/prod1.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">Spoon Set</h4>
-                            <p class="product-price">36.00 TK </p>
+                            <p class="product-price"><span id="price">36.00</span> TK </p>
                         </div>
         
-                        <div class="product-box">
+                        <div onclick="setProductTitleInTheCart(this)" class="product-box">
                             <div><img src="./images/prod2.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">K. Accessories</h4>
-                            <p class="product-price">25.00 TK </p>
+                            <p class="product-price"><span id="price">25.00</span> TK </p>
                         </div>
         
-                        <div class="product-box">
+                        <div onclick="setProductTitleInTheCart(this)" class="product-box">
                             <div><img src="./images/prod3.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">Home Cooker</h4>
-                            <p class="product-price">49.00 TK </p>
+                            <p class="product-price"><span id="price">49.00</span> TK </p>
                         </div>
                     </div>
 
@@ -78,25 +79,25 @@
                         <h3 class="category-title">Sportswear</h3>
     
                         <div class="product-grid">
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod4.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Sports Back Cap</h4>
-                                <p class="product-price">49.00 TK </p>
+                                <p class="product-price"><span id="price">49.00</span> TK </p>
                             </div>
             
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod5.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Full Jersey Set</h4>
-                                <p class="product-price">60.00 TK </p>
+                                <p class="product-price"><span id="price">60.00</span> TK </p>
                             </div>
             
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod6.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Sports cates</h4>
-                                <p class="product-price">150.00 TK </p>
+                                <p class="product-price"><span id="price">150.00</span> TK </p>
                             </div>
                         </div>
                     </div>
@@ -105,21 +106,21 @@
                         <h3 class="category-title">Furniture</h3>
     
                         <div class="product-grid">
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod7.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Single Relax Chair</h4>
                                 <p class="product-price">185.00 TK </p>
                             </div>
             
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod8.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Children play</h4>
                                 <p class="product-price">289.00 TK </p>
                             </div>
             
-                            <div class="product-box">
+                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod9.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Flexible Sofa</h4>
@@ -129,6 +130,9 @@
                     </div>
                 </div>
 
+                <!-- product grid end -->
+
+                <!-- sidebar start -->
 
                 <aside class="sidebar">
                     <div class="coupon">
@@ -136,17 +140,14 @@
     
                         <div>
                             <input placeholder="Coupon Code" type="text">
-                            <button class="coupon-button">Apply</button>
+                            <button disabled="disabled" class="coupon-button">Apply</button>
                         </div>
                     </div>
     
                     <div class="cart">
                         <div class="cart-products">
-                            <ul>
-                                <li class="cart-typo">1. Home Cooker</li>
-                                <li class="cart-typo">2. Sports cates</li>
-                                <li class="cart-typo">3. Home Cooker</li>
-                            </ul>
+                            <ol id="selected-product-list">
+                            </ol>
                         </div>
     
                         <hr>
@@ -159,13 +160,19 @@
     
                         <hr>
     
-                        <button class="make-purchase default-button">Make Purchase</button>
+                        <button disabled="disabled" class="make-purchase default-button">Make Purchase</button>
                     </div>
                 </aside>
+
+                <!-- sidebar end -->
+
             </div>
         </div>
     </section>
 
+
+
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
