@@ -240,7 +240,7 @@ hr {
     height: 2px;
     background: rgba(17, 17, 17, 0.15);}
 
-button.make-purchase {
+button#make-purchase {
     width: 90%;
     display: block;
     margin: 0px auto -45px;

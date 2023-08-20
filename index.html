@@ -57,74 +57,74 @@
                             <div><img src="./images/prod1.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">Spoon Set</h4>
-                            <p class="product-price"><span id="price">36.00</span> TK </p>
+                            <p class="product-price"><span>36.00</span> TK </p>
                         </div>
-        
+
                         <div onclick="setProductTitleInTheCart(this)" class="product-box">
                             <div><img src="./images/prod2.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">K. Accessories</h4>
-                            <p class="product-price"><span id="price">25.00</span> TK </p>
+                            <p class="product-price"><span>25.00</span> TK </p>
                         </div>
-        
+
                         <div onclick="setProductTitleInTheCart(this)" class="product-box">
                             <div><img src="./images/prod3.png" alt=""></div>
                             <img src="./images/rating.png" alt="">
                             <h4 class="product-title">Home Cooker</h4>
-                            <p class="product-price"><span id="price">49.00</span> TK </p>
+                            <p class="product-price"><span>49.00</span> TK </p>
                         </div>
                     </div>
 
                     <div class="category">
                         <h3 class="category-title">Sportswear</h3>
-    
+
                         <div class="product-grid">
                             <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod4.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Sports Back Cap</h4>
-                                <p class="product-price"><span id="price">49.00</span> TK </p>
+                                <p class="product-price"><span>49.00</span> TK </p>
                             </div>
-            
+
                             <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod5.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Full Jersey Set</h4>
-                                <p class="product-price"><span id="price">60.00</span> TK </p>
+                                <p class="product-price"><span>60.00</span> TK </p>
                             </div>
-            
+
                             <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod6.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Sports cates</h4>
-                                <p class="product-price"><span id="price">150.00</span> TK </p>
+                                <p class="product-price"><span>150.00</span> TK </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="category">
                         <h3 class="category-title">Furniture</h3>
-    
+
                         <div class="product-grid">
                             <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod7.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Single Relax Chair</h4>
-                                <p class="product-price">185.00 TK </p>
+                                <p class="product-price"><span>185.00</span> TK </p>
                             </div>
-            
+
                             <div onclick="setProductTitleInTheCart(this)" class="product-box">
                                 <div><img src="./images/prod8.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Children play</h4>
-                                <p class="product-price">289.00 TK </p>
+                                <p class="product-price"><span>289.00</span> TK </p>
                             </div>
-            
-                            <div onclick="setProductTitleInTheCart(this)" class="product-box">
+
+                            <div class="product-box">
                                 <div><img src="./images/prod9.png" alt=""></div>
                                 <img src="./images/rating.png" alt="">
                                 <h4 class="product-title">Flexible Sofa</h4>
-                                <p class="product-price">399.00 TK </p>
+                                <p class="product-price"><span>399.00</span> TK </p>
                             </div>
                         </div>
                     </div>
@@ -137,30 +137,42 @@
                 <aside class="sidebar">
                     <div class="coupon">
                         <h4 class="cart-typo">Have coupon?</h4>
-    
+
                         <div>
-                            <input placeholder="Coupon Code" type="text">
-                            <button disabled="disabled" class="coupon-button">Apply</button>
+                            <input id="coupon-input" placeholder="Coupon Code" type="text">
+                            <button id="coupon-apply" disabled class="coupon-button">Apply</button>
                         </div>
                     </div>
-    
+
                     <div class="cart">
                         <div class="cart-products">
                             <ol id="selected-product-list">
                             </ol>
                         </div>
-    
+
                         <hr>
-    
+
                         <div class="cart-calculation">
-                            <h4 class="cart-typo">Total price: <span class="cart-price"></span>257.00TK</h4>
-                            <h4 class="cart-typo">Discount: <span class="cart-price"></span>51.40TK</h4>
-                            <h4 class="cart-typo">Total : <span class="cart-price"></span>205.60TK</h4>
+                            <h4 class="cart-typo">Total price: <span id="total-price">00</span>TK</h4>
+                            <h4 class="cart-typo">Discount: <span id="discount">00</span>TK</h4>
+                            <h4 class="cart-typo">Total : <span id="discounted-total">00</span>TK</h4>
                         </div>
-    
+
                         <hr>
-    
-                        <button disabled="disabled" class="make-purchase default-button">Make Purchase</button>
+
+                        <button onclick="my_modal_1.showModal()" disabled id="make-purchase" class="default-button">Make
+                            Purchase</button>
+
+                        <dialog id="my_modal_1" class="modal">
+                            <form method="dialog" class="modal-box flex justify-center items-center gap-6 flex-col">
+                                <img src="./images/congo.png" class="mx-auto" alt="">
+                                <h1 class="font-bold text-4xl">Congratulations</h1>
+
+                                <p class="py-4">Your Purchase the product</p>
+
+                                <button onclick="location.reload()" class="text-center default-button">Go Home</button>
+                            </form>
+                        </dialog>
                     </div>
                 </aside>
 
@@ -171,7 +183,7 @@
     </section>
 
 
-
+    <!-- javascript file links -->
     <script src="scripts/app.js"></script>
 </body>
 
