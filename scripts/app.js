@@ -21,24 +21,18 @@ function setProductTitleInTheCart(target) {
         document.getElementById('make-purchase').removeAttribute('disabled');
     }
 
-}
-
-
-couponInput.addEventListener('keyup', function () {
-    if (couponInput.value === 'SELL200' && totalPrice > 200) {
+    if (totalPrice > 200) {
         couponApply.removeAttribute('disabled')
-    }else{
+    } else {
         couponApply.setAttribute('disabled', true)
     }
-})
+}
 
 couponApply.addEventListener('click', function () {
-    // if (totalPrice < 200) {
-    //     alert('You have to shop at least 200 TK');
-    //     return;
-    // } else {
-    //     couponApply.removeAttribute('disabled')
-    // }
+    if(couponInput.value !== 'SELL200'){
+        alert('Wrong coupon code');
+        return;
+    }
 
     const discount = document.getElementById('discount')
     const discountedTotal = document.getElementById('discounted-total')
