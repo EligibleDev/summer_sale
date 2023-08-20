@@ -81,20 +81,89 @@ section.banner-section {
 
 /* banner css end  */
 
+/* products section start  */
+.first-category-title {
+    display: block;
+}
+
 .products-section {
     background-color: #f8f8f8;
 }
 
-.products-section-container {
+.products-container {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.products-section-container {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    gap: 1.5rem;
 }
 
-button.make-purchase {
-    width: 90%;
-    display: block;
+.products-grid-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.product-grid {
+    justify-content: space-between;
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-box {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.product-box>div {
+    background: #f8f8f8;
+    border-radius: 0.5rem;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.product-title {
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.product-price {
+    color: rgba(17, 17, 17, 0.50);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.product-box > img{
+    width: 6rem;
+    margin: auto;
 }
 
 /* side bar css start  */
@@ -102,6 +171,8 @@ aside.sidebar {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    position: sticky;
+    top: 1.5rem;
 }
 
 .coupon {
@@ -155,8 +226,13 @@ aside.sidebar {
     gap: 1rem;
 }
 
-hr{
+hr {
     width: 100%;
-    height: 1px;
-    background: rgba(17, 17, 17, 0.15);
+    height: 2px;
+    background: rgba(17, 17, 17, 0.15);}
+
+button.make-purchase {
+    width: 90%;
+    display: block;
+    margin: 0px auto -45px;
 }
