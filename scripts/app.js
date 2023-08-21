@@ -21,7 +21,7 @@ function setProductTitleInTheCart(target) {
         document.getElementById('make-purchase').removeAttribute('disabled');
     }
 
-    if (totalPrice > 200) {
+    if (totalPrice >= 200) {
         couponApply.removeAttribute('disabled')
     } else {
         couponApply.setAttribute('disabled', true)
